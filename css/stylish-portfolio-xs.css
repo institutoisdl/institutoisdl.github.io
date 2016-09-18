@@ -46,7 +46,7 @@
 .callout {
     display: table;
     width: 100%;
-    height: 400px;
+    height: 400px; 
     color: #fff;
     background: url(../img/bg-4-xs.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
