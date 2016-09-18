@@ -16,6 +16,11 @@
     width: 100%;
 }
 
+.logo {
+    width: 40%;
+    max-width: 255px;
+}
+
  .text-medium {
     font-size: 130%;
  }
