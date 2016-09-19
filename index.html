@@ -111,16 +111,12 @@
             <div class="row text-center">
                 <h2>Próximos Rituais - Ayahuasca</h2>
                 <hr class="small">
-                <div ng-repeat="item in items">
-                    <div class="ritual" data="{{item.data}">
-                        <div>
-                        	<h3>{{item.dataStr}}</h3>
-                            <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo dia {{item.dataStr}}" title="Ritual com Ayahuasca em São Paulo dia {{item.dataStr}}" src="img/rituais/{{item.imgName}}">
-                        </div>
-                        <p>&nbsp;</p>
-                    </div>
-                    <!-- /.row (nested) -->
+                <div class="ritual" ng-repeat="item in items" data="{{item.data}">
+                	<h3>{{item.dataStr}}</h3>
+                    <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo dia {{item.dataStr}}" title="Ritual com Ayahuasca em São Paulo dia {{item.dataStr}}" src="img/rituais/{{item.imgName}}">
+                    <p>&nbsp;</p>
                 </div>
+                    <!-- /.row (nested) -->
                 <!-- /.col-lg-10 -->
             </div>
             <!-- /.row -->
