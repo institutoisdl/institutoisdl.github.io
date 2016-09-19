@@ -37,9 +37,10 @@
 	<meta property="og:image:width" content="255" />
 	<meta property="og:image:height" content="231" />
 
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 
-<body>
+<body ng-app="isdlApp" ng-controller="isdlCtrl">
 
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
@@ -108,27 +109,13 @@
     <section id="services" class="services">
         <div class="container">
             <div class="row text-center">
-                <div>
-                    <h2>Próximos Rituais - Ayahuasca</h2>
-                    <hr class="small">
-                    <div class="ritual" data="2016/10/09">
+                <h2>Próximos Rituais - Ayahuasca</h2>
+                <hr class="small">
+                <div ng-repeat="item in items">
+                    <div class="ritual" data="{{item.data}">
                         <div>
-                        	<h3>9 de Outubro às 10h</h3>
-                            <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo 9 de Outubro de 2016" title="Ritual com Ayahuasca em São Paulo 9 de Outubro de 2016" src="img/rituais/isdl-20161009-xs.jpg">
-                        </div>
-                        <p>&nbsp;</p>
-                    </div>
-                    <div class="ritual" data="2016/11/06">
-                        <div>
-                        	<h3>6 de Novembro às 10h</h3>
-                            <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo 6 de Novembro de 2016" title="Ritual com Ayahuasca em São Paulo 6 de Novembro de 2016" src="img/rituais/isdl-20161106-xs.jpg">
-                        </div>
-                        <p>&nbsp;</p>
-                    </div>
-                    <div class="ritual" data="2016/12/04">
-                        <div>
-                        	<h3>4 de Dezembro às 10h</h3>
-                            <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo 4 de Dezembro de 2016" title="Ritual com Ayahuasca em São Paulo 4 de Dezembro de 2016" src="img/rituais/isdl-20161204-xs.jpg">
+                        	<h3>{{item.dataStr}}</h3>
+                            <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo dia {{item.dataStr}}" title="Ritual com Ayahuasca em São Paulo dia {{item.dataStr}}" src="img/rituais/{{item.imgName}}">
                         </div>
                         <p>&nbsp;</p>
                     </div>
@@ -273,6 +260,31 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
+
+    var app = angular.module('isdlApp', []);
+    app.controller('isdlCtrl', function($scope) {
+        var ritual1 = {
+            data: "2016/10/09",
+            dataStr: "9 de Outubro às 10h", 
+            imgName: "isdl-20161009-xs.jpg"
+        };
+        var ritual2 = {
+            data: "2016/11/06",
+            dataStr: "6 de Novembro às 10h", 
+            imgName: "isdl-20161106-xs.jpg"
+        };
+        var ritual3 = {
+            data: "2016/12/04",
+            dataStr: "4 de Dezembro às 10h", 
+            imgName: "isdl-20161204-xs.jpg"
+        };
+
+        var items = [ritual1, ritual2, ritual3];
+        console.log(items);
+
+        $scope.items = items;
+
+    });
     
 	$(document).ready(function(){
 	    $(".ritual").each(function(index, value) {
