@@ -10,7 +10,7 @@
     <meta name="author" content="Lucas Fabiano<lucasguaru@yahoo.com.br>">
 
     <title>Instituto Servidores da Luz - Rituais com Ayahuasca</title>
-	<link rel="icon" type="image/png" href="https://institutoisdl.github.io/img/icon32.ico" />
+    <link rel="icon" type="image/png" href="https://institutoisdl.github.io/img/icon32.ico" />
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,12 +32,13 @@
     
     <meta property="og:image" content="http://institutoisdl.github.io/logo.png" />
     <meta property="og:description" content="Venham participar dos rituais que acontecem em nosso instituto" />
-	<meta property="og:image:secure_url" content="https://institutoisdl.github.io/logo.png" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image:width" content="255" />
-	<meta property="og:image:height" content="231" />
+    <meta property="og:image:secure_url" content="https://institutoisdl.github.io/logo.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="255" />
+    <meta property="og:image:height" content="231" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
 </head>
 
 <body ng-app="isdlApp" ng-controller="isdlCtrl">
@@ -92,11 +93,11 @@
                     <em>Anderson Cavalcante</em></p>
                     <br/>
                     <h2>Nossos Rituais</h2>
-                	<p class="lead">Desenvolvemos os rituais com o auxílio da ferramenta espiritual ayahuasca.<br/>
-                	Nosso compromisso é com a seriedade e a evolução.<br/>
-						Praticamos a meditação e nossos rituais tem duração 4 horas.<br/>
-						A ayahuasca que utilizamos é pura e sem qualquer tipo de mistura, aditivos ou drogas.</p>
-                	<p>&nbsp;</p>
+                    <p class="lead">Desenvolvemos os rituais com o auxílio da ferramenta espiritual ayahuasca.<br/>
+                    Nosso compromisso é com a seriedade e a evolução.<br/>
+                        Praticamos a meditação e nossos rituais tem duração 4 horas.<br/>
+                        A ayahuasca que utilizamos é pura e sem qualquer tipo de mistura, aditivos ou drogas.</p>
+                    <p>&nbsp;</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -111,9 +112,9 @@
             <div class="row text-center">
                 <h2>Próximos Rituais - Ayahuasca</h2>
                 <hr class="small">
-                <div class="ritual" ng-repeat="item in items" data="{{item.data}}">
-                	<h3>{{item.dataStr}}</h3>
-                    <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo dia {{item.dataStr}}" title="Ritual com Ayahuasca em São Paulo dia {{item.dataStr}}" src="img/rituais/{{item.imgName}}">
+                <div class="ritual" ng-repeat="ritual in rituais" data="{{ritual.data}">
+                    <h3>{{ritual.dataTexto}}</h3>
+                    <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo dia {{ritual.dataTexto}}" title="Ritual com Ayahuasca em São Paulo dia {{ritual.dataTexto}}" src="http:{{ritual.imagem.fields.file.url}}">
                     <p>&nbsp;</p>
                 </div>
                     <!-- /.row (nested) -->
@@ -127,7 +128,7 @@
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center text-black">
-        	<p>&nbsp;</p>
+            <p>&nbsp;</p>
             <h2>Normas e Condições para Participação em Nossos Rituais</h2>
               <div>
                 <p class="text-medium">
@@ -257,44 +258,58 @@
     <!-- Custom Theme JavaScript -->
     <script>
 
+    if (!String.prototype.endsWith) {
+      String.prototype.endsWith = function(searchString, position) {
+          var subjectString = this.toString();
+          if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position || position > subjectString.length) {
+            position = subjectString.length;
+          }
+          position -= searchString.length;
+          var lastIndex = subjectString.lastIndexOf(searchString, position);
+          return lastIndex !== -1 && lastIndex === position;
+      };
+    }
+
+    var testeMode = window.location.href.endsWith('teste');
+
+    var client = contentful.createClient({
+      // This is the space ID. A space is like a project folder in Contentful terms
+      space: 'ln55wc4ax9u5',
+      // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+      accessToken: '2461fa325882304971d276a20a19bb95d23f58b4957751075d952c52be5214e8'
+    });
+
     var app = angular.module('isdlApp', []);
     app.controller('isdlCtrl', function($scope) {
-        var ritual1 = {
-            data: "2016/10/09",
-            dataStr: "9 de Outubro às 10h", 
-            imgName: "isdl-20161009-xs.jpg"
-        };
-        var ritual2 = {
-            data: "2016/11/06",
-            dataStr: "6 de Novembro às 10h", 
-            imgName: "isdl-20161106-xs.jpg"
-        };
-        var ritual3 = {
-            data: "2016/12/04",
-            dataStr: "4 de Dezembro às 10h", 
-            imgName: "isdl-20161204-xs.jpg"
-        };
+        client.getEntries({content_type: 'rituais', order: 'fields.data'}).then(function(entries) {
+            console.log(entries);
+            var rituais = [];
+            for (var i = 0; i < entries.total; i++) {
+                var entry = entries.items[i].fields;
+                if (testeMode == true || entry.modoDeTeste == false) {
+                    var dataRitual = new Date(entry.data);
 
-        var items = [ritual1, ritual2, ritual3];
-        console.log(items);
+                    if (podeMostrarRitual(dataRitual)) {
+                        rituais.push(entry);
+                    }
+                }
+            }
+            $scope.rituais = rituais;
+            $scope.$apply();
+        });
 
-        $scope.items = items;
+        function podeMostrarRitual(dataRitual) {
+            var hoje = new Date();
+            dataRitual.setDate(dataRitual.getDate() + 1); //Adicionando 1 dia
+            if (hoje > dataRitual) {
+                return false;
+            } else {
+                return true;
+            }
+        }
 
     });
-    
-	$(document).ready(function(){
-	    $(".ritual").each(function(index, value) {
-	    	//console.log(value);
-	    	var hoje = new Date();
-	    	var data = new Date(value.getAttribute("data"));
-	    	data.setDate(data.getDate() + 1); //Adicionando 1 dia
-			if (hoje > data) {
-	    		//console.log(hoje + " - " + data);
-	    		$(value).hide();
-			}
 
-	    });
-	});
     
     
     // Closes the sidebar menu
