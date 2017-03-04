@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Instituto Servidores da Luz. Rituais com Ayahuasca e muito amor. Desenvolvemos os rituais com o auxílio da ferramenta espiritual ayahuasca.">
+    <meta name="author" content="Lucas Fabiano<lucasguaru@yahoo.com.br>">
+
+    <title>Instituto Servidores da Luz - Rituais com Ayahuasca</title>
+    <link rel="icon" type="image/png" href="https://institutoisdl.github.io/img/icon32.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link media="screen and (max-width: 700px)" href="css/stylish-portfolio-xs.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <meta property="og:image" content="http://institutoisdl.github.io/logo.png" />
+    <meta property="og:description" content="Venham participar dos rituais que acontecem em nosso instituto" />
+    <meta property="og:image:secure_url" content="https://institutoisdl.github.io/logo.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="255" />
+    <meta property="og:image:height" content="231" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
+
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"29c7b16cfc6cab132e4882799","lid":"928455e3ee"}) })</script>
+</head>
+
+<body ng-app="isdlApp" ng-controller="isdlCtrl">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5HWMG5');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HWMG5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle" title="Menu"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top" onclick="$('#menu-close').click();" title="ISDL">ISDL</a>
+            </li>
+            <li>
+                <a href="#top" onclick="$('#menu-close').click();" title="Home">Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick="$('#menu-close').click();" title="Quem Somos">Quem Somos</a>
+            </li>
+            <li>
+                <a href="#services" onclick="$('#menu-close').click();" title="Próximos Rituais">Próximos Rituais</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick="$('#menu-close').click();" title="Nossas Fotos">Nossas Fotos</a>
+            </li>
+            <li>
+                <a href="#contact" onclick="$('#menu-close').click();" title="Contato">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <img class="logo" src="img/logo.png" alt="Logotipo Instituto Servidores da Luz" title="Logotipo Instituto Servidores da Luz">
+            <h1 class="text-white">Instituto Servidores da Luz</h1>
+            <h3 class="text-white">Sejam Todos Muito Bem-vindos!</h3>
+            <br>
+            <a href="#about" class="btn btn-lg btn-white" title="Conhecer mais">Quero conhecer mais</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>O Amor</h2>
+                    <p class="lead">O amor é o valor mais forte que nos une aos nossos semelhantes.<br>
+                    O amor é capaz de nos elevar e dar sentido à nossa vida.<br>
+                    Só por amor somos capazes de grandes gestos.<br>
+                    Só por amor somos capazes de perdoar o que for preciso.<br>
+                    <em>Anderson Cavalcante</em></p>
+                    <br/>
+                    <h2>Nossos Rituais</h2>
+                    <p class="lead">Desenvolvemos os rituais com o auxílio da ferramenta espiritual ayahuasca.<br/>
+                    Nosso compromisso é com a seriedade e a evolução.<br/>
+                        Praticamos a meditação e nossos rituais tem duração 4 horas.<br/>
+                        A ayahuasca que utilizamos é pura e sem qualquer tipo de mistura, aditivos ou drogas.</p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- About -->
+    <section id="inscrever" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="row text-center">
+                <h2>Próximos Rituais - Ayahuasca</h2>
+                <hr class="small">
+                <div class="ritual" ng-repeat="ritual in rituais" data="{{ritual.data}">
+                    <h3>{{ritual.dataTexto}}</h3>
+                    <img class="img-ritual" alt="Ritual com Ayahuasca em São Paulo dia {{ritual.dataTexto}}" title="Ritual com Ayahuasca em São Paulo dia {{ritual.dataTexto}}" src="http:{{ritual.imagem.fields.file.url}}">
+                    <p>&nbsp;</p>
+                </div>
+                    <!-- /.row (nested) -->
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center text-black">
+            <p>&nbsp;</p>
+            <h2>Normas e Condições para Participação em Nossos Rituais</h2>
+              <div>
+                <p class="text-medium">
+                  Aqui Neste INSTITUTO Espiritual é expressamente PROIBIDO portar qualquer 
+                  droga, cigarro ou álcool. Nunca esquecer que é um trabalho espiritual, 
+                  O SILÊNCIO É FUNDAMENTAL. Traga Seriedade, Respeito e Disciplina! <br>
+                  - Todos são obrigados a apresentar documento com foto (RG, carteira 
+                  trabalho ou de motorista) Menores devem estar acompanhados por um dos 
+                  responsáveis legais ou com autorização por escrito com firma reconhecida 
+                  em Cartório. <br><a href="docs/at.doc" target="_blank" title="Documento para menor de idade poder participar sem os responsáveis">( clique aqui para imprimir 
+                  o modelo )</a> <br>
+                  </p>
+                <p class="text-medium">- 
+                  Trazer colchonete e cobertor <br>
+                  <br>
+                  Mulheres vestidas discretamente com blusa sem 
+                  decote e saia longa (pode-se usar por cima de calça comprida ou shorts) 
+                  <br>
+                  Homens vestidos com calça comprida e camiseta 
+                  de manga (não é permitido bermudas nem regatas). Roupas de cores claras 
+                  <br>
+                  <br>
+                  Restrições à participação nos trabalhos c/Ayahuasca: <br>
+                  <br>
+                  - Pessoas que tomam remédio tarja preta , caso não haja restrição médica 
+                  entrar em contato para mais informações. <br>
+                  <br>
+                  - Não é permitido às pessoas com problemas cardíacos, inclusive as que 
+                  utilizem marca-passo. <br>
+                  <br>
+                  - Não é permitido às pessoas com problemas psiquiátricos. <br>
+                  <br>
+                  - Dentro do Instituto é proibido FUMAR cigarro, USAR O RAPÉ - Sugerimos 
+                  que se abstenham de álcool 03 dias antes do trabalho para um melhor 
+                  aproveitamento do mesmo. <br>
+                  <br>
+                  O que levar para o ritual: rolos de papel higiênico, velas de sete dias, 
+                  incensos Nag Champa Alimentos para o final como: Pães, Bolos, tortas, 
+                  frutas e sucos... Traga para você e para seu irmão!!!</p>
+              </div>
+
+        </div>
+    </aside>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Nossas Fotos</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio img-responsive" src="img/ritual-1.jpeg" alt="O querido Alex conduzindo a palestra" title="O querido Alex conduzindo a palestra">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio img-responsive" src="img/ritual-2.jpeg" alt="Nete e os queridos fiscais" title="Nete e os queridos fiscais">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio img-responsive" src="img/ritual-3.jpeg" alt="O pessoal observando a palestra" title="O pessoal observando a palestra">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio img-responsive" src="img/ritual-4.jpeg" alt="O pessoal sentindo a energia das músicas" title="O pessoal sentindo a energia das músicas">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Map -->
+    <section id="contact" class="map">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.844580864672!2d-46.512607390310116!3d-23.581500031519766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce677f5527434f%3A0x35bfeed6b8ec4c2e!2sRua+Senador+Henrique+Novaes%2C+163+-+Jardim+Caguassu%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1474144714509" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <br />
+        <small>
+            <a title="Mapa do Local" href="https://www.google.com.br/maps/place/Rua+Senador+Henrique+Novaes,+163+-+Jardim+Caguassu,+S%C3%A3o+Paulo+-+SP/@-23.5815,-46.5126074,17.64z/data=!4m5!3m4!1s0x94ce677f5527434f:0x35bfeed6b8ec4c2e!8m2!3d-23.5815865!4d-46.5115014"></a>
+        </small>
+        </iframe>
+
+        
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3><strong>Institulo Servidores da Luz</strong>
+                    </h3>
+                    <p class="text-medium">Rua Senador Henrique Novaes, 163
+                        <br>Jd. Caguassu - São Paulo - SP</p>
+                    <ul class="list-unstyled text-medium">
+                        <li><i class="fa fa-whatsapp fa-fw"></i>Nete: 11 97959-3558</li>
+                        <li><i class="fa fa-whatsapp fa-fw"></i>Alex: 11 94024-3676</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:contato@isdl.com.br" title="Contato via e-mail">contato@isdl.com.br</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/servidores.daluz.7" title="Link para o Facebook"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+
+    if (!String.prototype.endsWith) {
+      String.prototype.endsWith = function(searchString, position) {
+          var subjectString = this.toString();
+          if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position || position > subjectString.length) {
+            position = subjectString.length;
+          }
+          position -= searchString.length;
+          var lastIndex = subjectString.lastIndexOf(searchString, position);
+          return lastIndex !== -1 && lastIndex === position;
+      };
+    }
+
+    var testeMode = window.location.href.endsWith('teste');
+
+    var client = contentful.createClient({
+      // This is the space ID. A space is like a project folder in Contentful terms
+      space: 'ln55wc4ax9u5',
+      // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+      accessToken: '2461fa325882304971d276a20a19bb95d23f58b4957751075d952c52be5214e8'
+    });
+
+    var app = angular.module('isdlApp', []);
+    app.controller('isdlCtrl', function($scope) {
+        client.getEntries({content_type: 'rituais', order: 'fields.data'}).then(function(entries) {
+            console.log(entries);
+            var rituais = [];
+            for (var i = 0; i < entries.total; i++) {
+                var entry = entries.items[i].fields;
+                if (testeMode == true || entry.modoDeTeste == false) {
+                    var dataRitual = new Date(entry.data);
+
+                    if (podeMostrarRitual(dataRitual)) {
+                        rituais.push(entry);
+                    }
+                }
+            }
+            $scope.rituais = rituais;
+            $scope.$apply();
+        });
+
+        function podeMostrarRitual(dataRitual) {
+            var hoje = new Date();
+            dataRitual.setDate(dataRitual.getDate() + 1); //Adicionando 1 dia
+            if (hoje > dataRitual) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    });
+
+    
+    
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    // Disable Google Maps scrolling
+    // See http://stackoverflow.com/a/25904582/1607849
+    // Disable scroll zooming and bind back the click event
+    var onMapMouseleaveHandler = function(event) {
+        var that = $(this);
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+    </script>
+
+</body>
+
+</html>
