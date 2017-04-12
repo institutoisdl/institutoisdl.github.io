@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://unpkg.com/contentful@4.1.2/dist/contentful.min.js"></script>
+<script>
+
+</script>
+
+</head>
+    <!-- Custom Theme JavaScript -->
+    <script>
+
+		var client = contentful.createClient({
+		  // This is the space ID. A space is like a project folder in Contentful terms
+		  space: 'lwue28clesj3',
+		  // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+		  accessToken: 'a1d1b70d644f32ab9d134debd0b8a22818a725d8c5f2a81a87260225fc2583ee'
+		});
+
+        client.getEntries({content_type: 'rituais', order: 'fields.data', 'fields.exibir': true}).then(function(entries) {
+            console.log(entries);
+            /*var rituais = [];
+            for (var i = 0; i < entries.total; i++) {
+                var entry = entries.items[i].fields;
+                if (testeMode == true || entry.modoDeTeste == false) {
+                    var dataRitual = new Date(entry.data);
+
+                    if (podeMostrarRitual(dataRitual)) {
+                        rituais.push(entry);
+                    }
+                }
+            }
+            $scope.rituais = rituais;
+            $scope.$apply();
+            */
+        });
+
+    </script>
+
+</body>
+
+</html>
