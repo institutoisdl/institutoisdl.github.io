@@ -311,7 +311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var app = angular.module('isdlApp', []);
     app.controller('isdlCtrl', function($scope) {
         client.getEntries({content_type: 'rituais', order: 'fields.data', 'fields.exibir': true}).then(function(entries) {
-            console.log(entries);
+            // console.log(entries);
             var rituais = [];
             for (var i = 0; i < entries.total; i++) {
                 var entry = entries.items[i].fields;
