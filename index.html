@@ -82,8 +82,7 @@
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      document.getElementById('statusFacebook').innerHTML = 'Por favor, entre com seu Facebook';
     }
   }
 
@@ -194,8 +193,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <br>
             <a href="#about" class="btn btn-lg btn-white" title="Conhecer mais">Quero conhecer mais</a>
             <Br><Br>
-            <div id="loginFacebook" class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+            <div id="loginFacebook" class="hide fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+            <fb:login-button id="btnLoginFacebook" scope="public_profile,email" data-size="large" data-button-type="login_with" onlogin="checkLoginState();"></fb:login-button>
         </div>
     </header>
 
@@ -417,7 +416,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var app = angular.module('isdlApp', []);
     app.controller('isdlCtrl', function($scope) {
         client.getEntries({content_type: 'rituais', order: 'fields.data', 'fields.exibir': true}).then(function(entries) {
-            console.log(entries);
+            // console.log(entries);
             var rituais = [];
             for (var i = 0; i < entries.total; i++) {
                 var entry = entries.items[i].fields;
@@ -445,15 +444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
     });
-    $(document).ready(function() {
-        FB.getLoginStatus(function(response) {
-            console.log(response);
-        });
-    });
-
-
-
-    
+   
     
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {
