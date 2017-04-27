@@ -79,7 +79,9 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      $('#bntLoginFacebook').addClass('hide');
+    //   $('#bntLoginFacebook').addClass('hide');
+      $('#bntLoginFacebook').remove();
+
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
