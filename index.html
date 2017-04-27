@@ -79,8 +79,8 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-    //   $('#bntLoginFacebook').addClass('hide');
-      $('#bntLoginFacebook').remove();
+      $('#bntLoginFacebook').addClass('hide');
+    //   $('#bntLoginFacebook').remove();
 
       testAPI();
     } else {
@@ -197,8 +197,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <br>
             <a href="#about" class="btn btn-lg btn-white" title="Conhecer mais">Quero conhecer mais</a>
             <Br><Br>
-            <div id="loginFacebook" class="hide fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-            <fb:login-button id="btnLoginFacebook" auto_logout_link="true" scope="public_profile,email" data-size="large" data-button-type="login_with" onlogin="checkLoginState();"></fb:login-button>
+            <div id="btnLoginFacebook" class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
+            <fb:login-button id="btnLoginFacebook" scope="public_profile,email" data-size="large" data-button-type="login_with" onlogin="checkLoginState();"></fb:login-button>
         </div>
     </header>
 
