@@ -62,8 +62,9 @@ app.controller('isdlCtrl', function($scope) {
 
     function podeMostrarRitual(dataRitual) {
         var hoje = new Date();
-        dataRitual.setDate(dataRitual.getDate() + 1); //Adicionando 1 dia
-        if (hoje > dataRitual) {
+        var dataTemp = new Date(dataRitual);
+        dataTemp.setDate(dataTemp.getDate() + 1); //Adicionando 1 dia
+        if (hoje > dataTemp) {
             return false;
         } else {
             return true;
