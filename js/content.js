@@ -45,11 +45,13 @@ app.controller('isdlCtrl', function($scope) {
                     var dataExtenso = dataRitual.getDate() + " de " + nomeMes[dataRitual.getMonth()] + " de " + dataRitual.getFullYear();
                     console.log(dataExtenso);
 
-                    var dataTexto = dataExtenso + " às " + dataRitual.getHours();
+                    var dataTexto = dataExtenso + " às " + dataRitual.getHours() + "h";
                     console.log(dataTexto);
+                    entry.dataTexto = dataTexto;
 
                     var titulo = "Meditação com Ayahuasca dia " + dataExtenso;
                     console.log(titulo);
+                    entry.titulo = titulo;
 
                     entry.imagem.fields.file.url = protocol + entry.imagem.fields.file.url;
                     rituais.push(entry);
