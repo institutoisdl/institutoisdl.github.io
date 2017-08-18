@@ -39,7 +39,7 @@ app.controller('isdlCtrl', function($scope) {
             var entry = entries.items[i].fields;
             if (testeMode == true || entry.modoDeTeste == false) {
                 var dataRitual = new Date(Date.parse(entry.data));
-                dataRitual.setHours(dataRitual.getHours() -3);
+                // dataRitual.setHours(dataRitual.getHours() -3);
 
                 if (podeMostrarRitual(dataRitual)) {
                     var dataExtenso = dataRitual.getDate() + " de " + nomeMes[dataRitual.getMonth()] + " de " + dataRitual.getFullYear();
