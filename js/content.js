@@ -31,8 +31,12 @@ nomeMes[10] = "Novembro";
 nomeMes[11] = "Dezembro";
 
 var app = angular.module('isdlApp', []);
+var hoje = new Date();
+var ontem = new Date(hoje);
+ontem.setDate(ontem.getDate() - 1);
+
 app.controller('isdlCtrl', function($scope) {
-    client.getEntries({content_type: 'rituais', order: 'fields.data', 'fields.exibir': true}).then(function(entries) {
+    client.getEntries({content_type: 'rituais', order: 'fields.data', 'fields.exibir': true, 'fields.data[gte]': ontem}).then(function(entries) {
         // console.log(entries);
         var rituais = [];
         for (var i = 0; i < entries.total; i++) {
@@ -59,7 +63,6 @@ app.controller('isdlCtrl', function($scope) {
     });
 
     function podeMostrarRitual(dataRitual) {
-        var hoje = new Date();
         var dataTemp = new Date(dataRitual);
         dataTemp.setDate(dataTemp.getDate() + 1); //Adicionando 1 dia
         if (hoje > dataTemp) {
