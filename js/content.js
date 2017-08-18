@@ -41,7 +41,7 @@ app.controller('isdlCtrl', function($scope) {
                 var dataRitual = new Date(entry.data);
 
                 if (podeMostrarRitual(dataRitual)) {
-                    var dataExtenso = dataRitual.getDay + " de " + nomeMes[dataRitual.getMonth()] + " de " + dataRitual.getFullYear();
+                    var dataExtenso = dataRitual.getDay() + " de " + nomeMes[dataRitual.getMonth()] + " de " + dataRitual.getFullYear();
                     console.log(dataExtenso);
 
                     var titulo = "Meditação com Ayahuasca dia " + dataExtenso;
