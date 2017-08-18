@@ -38,11 +38,15 @@ app.controller('isdlCtrl', function($scope) {
         for (var i = 0; i < entries.total; i++) {
             var entry = entries.items[i].fields;
             if (testeMode == true || entry.modoDeTeste == false) {
-                var dataRitual = new Date(entry.data);
+                var dataRitual = new Date(Date.parse(entry.data));
+                dataRitual.setHours(dataRitual.getHours() -3);
 
                 if (podeMostrarRitual(dataRitual)) {
                     var dataExtenso = dataRitual.getDay() + " de " + nomeMes[dataRitual.getMonth()] + " de " + dataRitual.getFullYear();
                     console.log(dataExtenso);
+
+                    var dataTexto = dataExtenso + "às " + dataRitual.getHours();
+                    console.log(dataTexto);
 
                     var titulo = "Meditação com Ayahuasca dia " + dataExtenso;
                     console.log(titulo);
