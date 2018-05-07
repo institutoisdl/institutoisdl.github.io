@@ -36,30 +36,38 @@ var ontem = new Date(hoje);
 ontem.setDate(ontem.getDate() - 1);
 
 app.controller('isdlCtrl', function($scope) {
+    $scope.mostrarRituais = false;
+    $scope.mostrarSemRitual = false;
     client.getEntries({content_type: 'rituais', order: 'fields.data', 'fields.exibir': true, 'fields.data[gte]': ontem}).then(function(entries) {
         // console.log(entries);
         var rituais = [];
-        for (var i = 0; i < entries.total; i++) {
-            var entry = entries.items[i].fields;
-            if (testeMode == true || entry.modoDeTeste == false) {
-                var dataRitual = new Date(Date.parse(entry.data));
-
-                if (podeMostrarRitual(dataRitual)) {
-                    var dataExtenso = dataRitual.getDate() + " de " + nomeMes[dataRitual.getMonth()] + " de " + dataRitual.getFullYear();
-
-                    var dataTexto = dataExtenso + " às " + dataRitual.getHours() + "h";
-                    entry.dataTexto = dataTexto;
-
-                    var titulo = "Meditação com Ayahuasca dia " + dataExtenso;
-                    entry.titulo = titulo;
-
-                    entry.imagem.fields.file.url = protocol + entry.imagem.fields.file.url;
-                    rituais.push(entry);
+        if (entries.total > 0) {
+            for (var i = 0; i < entries.total; i++) {
+                var entry = entries.items[i].fields;
+                if (testeMode == true || entry.modoDeTeste == false) {
+                    var dataRitual = new Date(Date.parse(entry.data));
+                    
+                    if (podeMostrarRitual(dataRitual)) {
+                        var dataExtenso = dataRitual.getDate() + " de " + nomeMes[dataRitual.getMonth()] + " de " + dataRitual.getFullYear();
+                        
+                        var dataTexto = dataExtenso + " às " + dataRitual.getHours() + "h";
+                        entry.dataTexto = dataTexto;
+                        
+                        var titulo = "Meditação com Ayahuasca dia " + dataExtenso;
+                        entry.titulo = titulo;
+                        
+                        entry.imagem.fields.file.url = protocol + entry.imagem.fields.file.url;
+                        rituais.push(entry);
+                    }
                 }
             }
+            $scope.mostrarRituais = true;
+            $scope.rituais = rituais;
+            $scope.$apply();
+        } else {
+            $scope.mostrarSemRitual = true;
+            $scope.$apply();
         }
-        $scope.rituais = rituais;
-        $scope.$apply();
     });
 
     function podeMostrarRitual(dataRitual) {
