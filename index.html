@@ -1,75 +1,305 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta property="fb:pages" content="423420834663116" />
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Instituto Servidores da Luz. Rituais com Ayahuasca e muito amor. Desenvolvemos os rituais com o auxílio da ferramenta espiritual ayahuasca.">
-  <meta name="author" content="Lucas Fabiano<lucasguaru@yahoo.com.br>">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fb:pages" content="423420834663116" />
+    <meta name="description"
+        content="Instituto Servidores da Luz. Rituais com Ayahuasca e muito amor em São Paulo na Zona Lete. Desenvolvemos os rituais com o auxílio da ferramenta espiritual ayahuasca.">
+    <meta name="author" content="Lucas Fabiano<lucasguaru@yahoo.com.br>">
+    <title>Instituto Servidores da Luz - Rituais com Ayahuasca</title>
+    <link rel="icon" type="image/png" href="img/icon32.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylish-portfolio-xs.css">
+    <link rel="stylesheet" href="css/stylish-portfolio.css">
 
-  <title>Instituto Servidores da Luz - Rituais com Ayahuasca</title>
-  <link rel="icon" type="image/png" href="https://institutoisdl.github.io/img/icon32.ico" />
+    <!-- Custom Fonts -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+        rel="stylesheet" type="text/css">
 
 
-  <!-- Custom Fonts -->
-  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-    type="text/css">
+    <meta property="og:image" content="http://institutoisdl.github.io/logo.png" />
+    <meta property="og:description" content="Venham participar dos rituais que acontecem em nosso instituto" />
+    <meta property="og:image:secure_url" content="https://institutoisdl.github.io/logo.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="255" />
+    <meta property="og:image:height" content="231" />
 
+    <base href="/">
 
-  <meta property="og:image" content="http://institutoisdl.github.io/logo.png" />
-  <meta property="og:description" content="Venham participar dos rituais que acontecem em nosso instituto" />
-  <meta property="og:image:secure_url" content="https://institutoisdl.github.io/logo.png" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="255" />
-  <meta property="og:image:height" content="231" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <base href="/">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/contentful@4.1.2/dist/contentful.min.js"></script>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
-
-  <script src="https://unpkg.com/contentful@4.1.2/dist/contentful.min.js"></script>
-
-  <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+    <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 </head>
 
 <body>
 
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5HWMG5');</script>
-  <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5HWMG5');</script>
+    <!-- End Google Tag Manager -->
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HWMG5" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HWMG5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-  <app-root></app-root>
+    <nav id="navbar-div" class="navbar navbar-expand-xg navbar-dark w-100 position-absolute z1">
+        <a class="navbar-brand" href="">Instituto Servidores da Luz</a>
+        <button class="navbar-toggler float-right my-right" type="button" data-toggle="collapse" data-target="#navbar1"
+            aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 float-right my-right menu-lista">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about">Sobre</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#inscrever">Inscrever</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#proximosRituais">Próximos Rituais</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#normas">Normas</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#fotos">Fotos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#contact">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div id="header-div" class="text-vertical-center">
+            <img class="logo" src="img/logo.png" alt="Logotipo Instituto Servidores da Luz"
+                title="Logotipo Instituto Servidores da Luz">
+            <h1 class="text-white">Instituto Servidores da Luz</h1>
+            <h3 class="text-white">Sejam Todos Muito Bem-vindos!</h3>
+            <br>
+            <a href="#proximosRituais" class="btn btn-lg btn-white" title="Próximos Rituais">Próximos Rituais</a>
+            <br>
+            <br>
+            <a href="https://www.facebook.com/institutoservidoresdaluz/" title="Link para o Facebook"><i
+                    class="fa fa-facebook fa-fw fa-3x"></i></a>
+        </div>
+    </header>
 
 
-  <script src="assets/js/jquery.js"></script>
-  <!-- <script src="assets/js/content.js"></script> -->
-  <!-- <script src="assets/js/menu.js"></script> -->
-<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>O Amor</h2>
+                    <p class="lead">O amor é o valor mais forte que nos une aos nossos semelhantes.<br>
+                        O amor é capaz de nos elevar e dar sentido à nossa vida.<br>
+                        Só por amor somos capazes de grandes gestos.<br>
+                        Só por amor somos capazes de perdoar o que for preciso.<br>
+                        <em>Anderson Cavalcante</em>
+                    </p>
+                    <br />
+                    <h2>Nossos Rituais</h2>
+                    <p class="lead">Desenvolvemos os rituais com o auxílio da ferramenta espiritual ayahuasca.<br />
+                        Nosso compromisso é com a seriedade e a evolução.<br />
+                        Praticamos a meditação e nossos rituais tem duração 4 horas.<br />
+                        A ayahuasca que utilizamos é pura e sem qualquer tipo de mistura, aditivos ou drogas.</p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+
+    <section id="proximosRituais" class="services">
+        <div class="container" *ngIf="rituais.length > 0">
+            <div class="text-center">
+                <h2>Próximos Rituais - Ayahuasca</h2>
+                <hr class="small">
+                <div class="ritual" *ngFor="let ritual of rituais">
+                    <h3>{{ritual.dataTexto}}</h3>
+                    <p [innerHTML]="ritual.eventoFaceEmbedly"></p>
+                    <a [href]="ritual.eventoFace" target="blank"><img class="img-ritual"
+                            alt="Meditação com Ayahuasca em São Paulo dia {{ritual.dataTexto}}"
+                            title="Meditação com Ayahuasca em São Paulo dia {{ritual.dataTexto}}"
+                            src="{{ritual.imagem.fields.file.url}}"></a>
+                    <p class="confirmar-presenca"><a target="_blank"
+                            href="https://wa.me/5511994778572?text=Olá, tenho interesse em participar do ritual do dia {{ritual.dataTexto}}">Confirmar
+                            presença via Whatsapp</a></p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" *ngIf="rituais.length == 0">
+            <div class="text-center">
+                <h2>Próximos Rituais - Ainda não temos uma data definida</h2>
+                <p>Mas se quiser ser avisado, você pode nos seguir no
+                    Facebook:</p>
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.facebook.com/institutoservidoresdaluz/" title="Link para o Facebook"><i
+                                class="fa fa-facebook fa-fw fa-3x"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="text-center">
+                <img class="normas-procedimentos" src="img/normas-procedimentos-covid.jpeg"
+                    alt="Normas e Procedimentos Covid">
+            </div>
+            <p>&nbsp;</p>
+            <div class="text-center">
+                <img class="calendario-anual" src="img/calendario-anual.jpeg" alt="Calendário Anual">
+            </div>
+        </div>
+    </section>
+
+    <section id="normas" class="about">
+        <!-- Callout -->
+        <aside class="callout">
+            <div class="text-vertical-center text-black">
+                <p>&nbsp;</p>
+                <h2>Normas e Condições para Participação em Nossos Rituais</h2>
+                <div>
+                    <p class="text-medium">
+                        Aqui Neste INSTITUTO Espiritual é expressamente PROIBIDO portar qualquer
+                        droga, cigarro ou álcool. Nunca esquecer que é um trabalho espiritual,
+                        O SILÊNCIO É FUNDAMENTAL. Traga Seriedade, Respeito e Disciplina! <br>
+                        - Todos são obrigados a apresentar documento com foto (RG, carteira
+                        trabalho ou de motorista) Menores devem estar acompanhados por um dos
+                        responsáveis legais ou com autorização por escrito com firma reconhecida
+                        em Cartório. <br><a href="docs/at.doc" target="_blank"
+                            title="Documento para menor de idade poder participar sem os responsáveis">( clique aqui
+                            para imprimir
+                            o modelo )</a> <br>
+                    </p>
+                    <p class="text-medium">-
+                        Trazer colchonete e cobertor <br>
+                        <br>
+                        Mulheres vestidas discretamente com blusa sem
+                        decote e saia longa (pode-se usar por cima de calça comprida ou shorts)
+                        <br>
+                        Homens vestidos com calça comprida e camiseta
+                        de manga (não é permitido bermudas nem regatas). Roupas de cores claras
+                        <br>
+                        <br>
+                        Restrições à participação nos trabalhos c/Ayahuasca: <br>
+                        <br>
+                        - Pessoas que tomam remédio tarja preta , caso não haja restrição médica
+                        entrar em contato para mais informações. <br>
+                        <br>
+                        - Não é permitido às pessoas com problemas cardíacos, inclusive as que
+                        utilizem marca-passo. <br>
+                        <br>
+                        - Não é permitido às pessoas com problemas psiquiátricos. <br>
+                        <br>
+                        - Dentro do Instituto é proibido FUMAR cigarro, USAR O RAPÉ - Sugerimos
+                        que se abstenham de álcool 03 dias antes do trabalho para um melhor
+                        aproveitamento do mesmo. <br>
+                        <br>
+                        O que levar para o ritual: rolos de papel higiênico, velas de sete dias,
+                        incensos Nag Champa Alimentos para o final como: Pães, Bolos, tortas,
+                        frutas e sucos... Traga para você e para seu irmão!!!
+                    </p>
+                </div>
+
+            </div>
+        </aside>
+    </section>
+
+
+
+    <!-- Map -->
+    <section id="contact" class="map">
+        <iframe class="w-100" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.844580864672!2d-46.512607390310116!3d-23.581500031519766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce677f5527434f%3A0x35bfeed6b8ec4c2e!2sRua+Senador+Henrique+Novaes%2C+163+-+Jardim+Caguassu%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1474144714509"
+            width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+            <br />
+            <small>
+                <a title="Mapa do Local"
+                    href="https://www.google.com.br/maps/place/Rua+Senador+Henrique+Novaes,+163+-+Jardim+Caguassu,+S%C3%A3o+Paulo+-+SP/@-23.5815,-46.5126074,17.64z/data=!4m5!3m4!1s0x94ce677f5527434f:0x35bfeed6b8ec4c2e!8m2!3d-23.5815865!4d-46.5115014"></a>
+            </small>
+        </iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3><strong>Instituto Servidores da Luz</strong>
+                    </h3>
+                    <p class="text-medium">Rua Senador Henrique Novaes, 163
+                        <br>Jd. Caguassu - São Paulo - SP
+                    </p>
+                    <p><a href="https://goo.gl/maps/EukoWk1Mfwr2Pi2N7">Abrir Google Maps</a></p>
+                    <ul class="list-unstyled text-medium">
+                        <li><a target="_blank"
+                                href="https://api.whatsapp.com/send?phone=5511994778572&text=Ola,%20encontrei%20seu%20site%20e%20gostaria%20de%20mais%20informações"><i
+                                    class="fa fa-whatsapp fa-fw"></i>Claudião: 11 99477-8572</a></li>
+                        <li><a target="_blank"
+                                href="https://api.whatsapp.com/send?phone=5511958617962&text=Ola,%20encontrei%20seu%20site%20e%20gostaria%20de%20mais%20informações"><i
+                                    class="fa fa-whatsapp fa-fw"></i>Nete: 11 95861-7962</a></li>
+                        <li><a target="_blank"
+                                href="https://api.whatsapp.com/send?phone=5511940243676&text=Ola,%20encontrei%20seu%20site%20e%20gostaria%20de%20mais%20informações"><i
+                                    class="fa fa-whatsapp fa-fw"></i>Alex: 11 94024-3676</a></li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:servidoresdaluz@outlook.com"
+                                title="Contato via e-mail">servidoresdaluz@outlook.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/institutoservidoresdaluz/" title="Link para o Facebook"><i
+                                    class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
+
+
+</body>
+
+<script src="js/jquery.js"></script>
 
 </html>
